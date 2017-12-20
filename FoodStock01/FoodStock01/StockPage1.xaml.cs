@@ -49,7 +49,15 @@ namespace FoodStock01
 
             DisplayAlert("Delete", "主キー" + no + " " + name, "ok");
 
-            
+            /***試し***/
+            int s_no = int.Parse(no);
+            StockFoodModel.DeleteStock(s_no);
+
+            Title = "保存食品リスト";
+        
+            InitializeComponent();
+            /*********/
+
         }
 
         //プラスがクリックされた

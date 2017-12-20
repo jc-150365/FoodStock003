@@ -38,13 +38,15 @@ namespace FoodStock01
         }
 
         //デリート押された
-        void OnDelete_Clicked(object sender, EventArgs args)
+        //void OnDelete_Clicked(object sender, EventArgs args)
+         async void OnDelete_Clicked(object sender, EventArgs args)
         {
             string no = ((CustomButtonDelete)sender).NoText;
             string name = ((CustomButtonDelete)sender).NameText;
 
-            DisplayAlert("Delete","主キー"+no+" "+name,"ok");
-
+            /*
+            DisplayAlert("Delete","主キー"+no+" "+name,"OK");
+            
             int f_no = int.Parse(no);
             FoodModel.DeleteFood(f_no);
 
@@ -52,6 +54,20 @@ namespace FoodStock01
             s = "http://cookpad.com/search/";
 
             InitializeComponent();
+            */
+            var result = await DisplayAlert("削除", "この食材を削除しますか", "OK", "キャンセル"); 
+            if (result == true) 
+            {
+                int f_no = int.Parse(no);
+                FoodModel.DeleteFood(f_no);
+
+                Title = "食材リスト";
+                s = "http://cookpad.com/search/";
+
+                InitializeComponent();
+            }
+            
+
 
 
         }
