@@ -48,6 +48,8 @@ namespace FoodStock01
             string name = ((CustomButtonDelete)sender).NameText;
 
             DisplayAlert("Delete", "主キー" + no + " " + name, "ok");
+
+            
         }
 
         //プラスがクリックされた

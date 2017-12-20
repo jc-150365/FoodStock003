@@ -44,6 +44,16 @@ namespace FoodStock01
             string name = ((CustomButtonDelete)sender).NameText;
 
             DisplayAlert("Delete","主キー"+no+" "+name,"ok");
+
+            int f_no = int.Parse(no);
+            FoodModel.DeleteFood(f_no);
+
+            Title = "食材リスト";
+            s = "http://cookpad.com/search/";
+
+            InitializeComponent();
+
+
         }
 
         void OnSearch_Clicked(object sender, EventArgs args)
