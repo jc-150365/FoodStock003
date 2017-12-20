@@ -22,7 +22,7 @@ namespace FoodStock01
 
         public FoodPageViewModel()
         {
-            /*************おかしくなったらここを解除****************/
+            /*************おかしくなったらここを解除*****************/
             /*
             if (FoodModel.SelectFood() != null)
             {
