@@ -42,21 +42,35 @@ namespace FoodStock01
         }
 
         //デリート押された
-        void OnDelete_Clicked(object sender, EventArgs args)
+        async void OnDelete_Clicked(object sender, EventArgs args)
         {
             string no = ((CustomButtonDelete)sender).NoText;
             string name = ((CustomButtonDelete)sender).NameText;
 
+            /*
             DisplayAlert("Delete", "主キー" + no + " " + name, "ok");
 
             /***試し***/
+            /*
             int s_no = int.Parse(no);
             StockFoodModel.DeleteStock(s_no);
 
             Title = "保存食品リスト";
         
             InitializeComponent();
+            */
             /*********/
+
+            var result = await DisplayAlert("削除", "この保存食品を削除しますか", "OK", "キャンセル");
+            if (result == true)
+            {
+                int s_no = int.Parse(no);
+                StockFoodModel.DeleteStock(s_no);
+
+                Title = "保存食品リスト";
+
+                InitializeComponent();
+            }
 
         }
 

@@ -66,10 +66,6 @@ namespace FoodStock01
 
                 InitializeComponent();
             }
-            
-
-
-
         }
 
         void OnSearch_Clicked(object sender, EventArgs args)
