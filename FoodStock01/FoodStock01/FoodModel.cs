@@ -147,7 +147,7 @@ namespace FoodStock01
                     /**********試し*************/
                     List<SettingModel> SetList = SettingModel.SelectSetting();
 
-                    int[] SetArray = new int[1];
+                    int[] SetArray = new int[100];
 
                     int alert = 1;
 
