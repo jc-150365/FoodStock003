@@ -44,7 +44,9 @@
                     Grid.Column="1" Grid.Row="0" 
                     HorizontalOptions="End"
                     WidthRequest="100"
-                    Title="通知日数">
+                    Title="通知日数"
+                    x:Name="SetPicker"
+                    SelectedIndexChanged="SetPicker_SelectedIndexChanged">
                     <Picker.Items>
                         <x:String>1</x:String>
                         <x:String>2</x:String>
@@ -62,7 +64,9 @@
             </Grid>
 
             <Button Text="保存" 
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    x:Name="Set_Save"
+                    Clicked="Set_Save_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

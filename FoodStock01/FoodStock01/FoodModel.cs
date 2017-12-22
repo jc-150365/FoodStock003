@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace FoodStock01
 {
@@ -19,9 +20,8 @@ namespace FoodStock01
 
         public DateTime F_date { get; set; } //消費期限
 
-        public string F_limit { get; set; } //現在時刻との差（後で使うかも）
-
-        public TimeSpan F_span { get; set; } //現在日時との差（後で使うかも）
+        [ForeignKey(typeof(SettingModel))]
+        public int Set_no { get; set; } //Setting表の外部キー
 
         /********************インサートメソッド**********************/
         public static void InsertFood(int f_no, string f_name, int f_result, DateTime f_date)
@@ -133,6 +133,28 @@ namespace FoodStock01
                 {
                     db.Rollback();
                     System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
+
+        /*******************セレクトメソッド（通知の試し）**************************************/
+        public static List<FoodModel> SelectFood02()
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースに指定したSQLを発行
+                    return db.Query<FoodModel>("SELECT * FROM [Food] JOIN [Setting]" +
+                                               "ON [Food].[Set_no] = [Setting].[Set_no]" +
+                                               "WHERE [F_result] = [S_alert]");
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
                 }
             }
         }
