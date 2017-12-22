@@ -22,11 +22,9 @@ namespace FoodStock01
                 //タイトル
                 Title = title;
 
-                DisplayAlert("期限通知", "期限が近づいている食材があります", "OK");
-
                 InitializeComponent();
 
-                //DisplayAlert("期限通知", "期限が近づいている食材があります", "OK");//試し
+                DisplayAlert("期限通知", "期限が近づいている食材があります", "OK");//試し
             }
             else
             {
@@ -34,6 +32,8 @@ namespace FoodStock01
                 Title = title;
 
                 InitializeComponent();
+
+                DisplayAlert("試しのアラート", "とりあえず通知", "OK");
             }
         }
 
