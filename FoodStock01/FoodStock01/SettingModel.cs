@@ -78,5 +78,42 @@ namespace FoodStock01
                 }
             }
         }
+
+        /*******************セレクトメソッド（試し）*************************************/
+        public static int SelectSetting_Max()
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    /**********試し*************/
+                    List<SettingModel> SetList = SettingModel.SelectSetting();
+
+                    int[] SetArray = new int[1];
+
+                    int alert = 1;
+
+                    int i = 0;
+
+                    foreach (SettingModel stm in SetList)
+                    {
+                        SetArray[i++] = stm.Set_alert;
+                    }
+
+                    alert = SetArray[0];
+
+                    //データベースに指定したSQLを発行
+                    return alert;
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Diagnostics.Debug.WriteLine(e);
+                    //return null;
+                    return -999;
+                }
+            }
+        }
     }
 }

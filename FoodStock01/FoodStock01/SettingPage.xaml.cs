@@ -14,6 +14,8 @@ namespace FoodStock01
 	{
         int notice = 0;//SetPickerの値を一時的に保持する
 
+        int select_max;
+
         public SettingPage(string title)
         {
 
@@ -59,6 +61,13 @@ namespace FoodStock01
                 SettingModel.UpdateSetting(1,notice);
                 DisplayAlert("通知日数", notice.ToString(), "OK");
             }
+        }
+
+        private void Select_Max_Clicked(object sender, EventArgs e)
+        {
+            select_max = SettingModel.SelectSetting_Max();
+
+            DisplayAlert("最新の通知日数", select_max.ToString(), "OK");
         }
     }
 }

@@ -67,6 +67,12 @@
                     VerticalOptions="Center"
                     x:Name="Set_Save"
                     Clicked="Set_Save_Clicked"/>
+
+            <Button Text="最新の通知日数" 
+                    VerticalOptions="Center"
+                    x:Name="Select_Max"
+                    Clicked="Select_Max_Clicked"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
