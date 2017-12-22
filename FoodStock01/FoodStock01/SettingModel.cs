@@ -45,7 +45,7 @@ namespace FoodStock01
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<SettingModel>("SELECT [Set_alert] FROM [Setting]");
+                    return db.Query<SettingModel>("SELECT * FROM [Setting]");
 
                 }
                 catch (Exception e)
@@ -87,7 +87,7 @@ namespace FoodStock01
                 try
                 {
                     /**********試し*************/
-                    List<SettingModel> SetList = SettingModel.SelectSetting();
+                    List<SettingModel> SetList = db.Query<SettingModel>("SELECT [Set_alert] FROM [Setting]"); ;
 
                     int[] SetArray = new int[1];
 
@@ -97,6 +97,7 @@ namespace FoodStock01
 
                     foreach (SettingModel stm in SetList)
                     {
+                        //SetArray[i++] = stm.Set_alert;
                         SetArray[i++] = stm.Set_alert;
                     }
 

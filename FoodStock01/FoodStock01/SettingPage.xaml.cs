@@ -12,7 +12,7 @@ namespace FoodStock01
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SettingPage : ContentPage
 	{
-        int notice = 0;//SetPickerの値を一時的に保持する
+        int alert = 0;//SetPickerの値を一時的に保持する
 
         int select_max;
 
@@ -42,13 +42,13 @@ namespace FoodStock01
         {
             var x = SetPicker.SelectedIndex;
 
-            notice = x + 1;//
+            alert = x + 1;//
         }
 
         /**********保存ボタンを押した時**************************/
         private void Set_Save_Clicked(object sender, EventArgs e)
         {
-            if (notice == 0)
+            if (alert == 0)
             {
                 DisplayAlert("通知日数エラー", "通知日数を選択してください", "OK");
             }
@@ -58,8 +58,8 @@ namespace FoodStock01
                 SettingModel.UpdateSetting(1,notice);
                 DisplayAlert("通知日数", notice.ToString(), "OK");
                 */
-                SettingModel.UpdateSetting(1,notice);
-                DisplayAlert("通知日数", notice.ToString(), "OK");
+                SettingModel.UpdateSetting(1,alert);
+                DisplayAlert("通知日数", alert.ToString(), "OK");
             }
         }
 
