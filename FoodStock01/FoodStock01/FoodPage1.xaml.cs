@@ -17,7 +17,7 @@ namespace FoodStock01
 
         public FoodPage1(string title)
         {
-            if (FoodModel.SelectFood02() != null)
+            /*if (FoodModel.SelectFood02() != null)
             {
                 //タイトル
                 Title = title;
@@ -34,7 +34,8 @@ namespace FoodStock01
                 Title = title;
 
                 InitializeComponent();
-            }
+            }*/
+            DisplayAlert("こんにちは", "どうも", "OK");
         }
 
         void ChackBoxChanged(object sender, bool isChecked)
