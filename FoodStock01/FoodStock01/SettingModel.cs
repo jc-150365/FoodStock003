@@ -45,7 +45,7 @@ namespace FoodStock01
                 try
                 {
                     //データベースに指定したSQLを発行
-                    return db.Query<SettingModel>("SELECT * FROM [Setting]");
+                    return db.Query<SettingModel>("SELECT [Set_alert] FROM [Setting]");
 
                 }
                 catch (Exception e)

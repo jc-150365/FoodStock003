@@ -139,15 +139,29 @@ namespace FoodStock01
 
         /*******************セレクトメソッド（通知の試し）**************************************/
         public static List<FoodModel> SelectFood02()
-        {
+        {           
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
+                    /**********試し*************/
+                    List<SettingModel> SetList = SettingModel.SelectSetting();
+
+                    int[] SetArray = new int[1];
+
+                    int alert = 1;
+
+                    int i = 0;
+
+                    foreach(SettingModel stm in SetList)
+                    {
+                        SetArray[i++] = stm.Set_alert;
+                    }
+
+                    alert = SetArray[0];
+
                     //データベースに指定したSQLを発行
-                    return db.Query<FoodModel>("SELECT * FROM [Food] JOIN [Setting]" +
-                                               "ON [Food].[Set_no] = [Setting].[Set_no]" +
-                                               "WHERE [F_result] = [S_alert]");
+                    return db.Query<FoodModel>("SELECT * FROM [Food] WHERE [F_result] = "+ alert);
 
                 }
                 catch (Exception e)
