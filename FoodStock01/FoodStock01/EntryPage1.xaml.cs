@@ -92,7 +92,8 @@ namespace FoodStock01
             }
             */
 
-            if (!(NameEntry.Text.Equals("")))
+            /*if (!(NameEntry.Text.Equals("")))*/
+            if(NameEntry.Text.Length == 0)
             {
                 if (!s_switch)//食材の登録だったら
                 {
