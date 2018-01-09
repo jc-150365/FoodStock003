@@ -70,6 +70,7 @@ namespace FoodStock01
         /***************「登録ボタン」が押された時*********************/
         private void Insert01_Clicked(object sender, EventArgs e)
         {
+            /*
             if (!s_switch)//食材の登録だったら
             {
                 FoodModel.InsertFood(1, NameEntry.Text, result, yyyymmdd);//試し
@@ -89,6 +90,35 @@ namespace FoodStock01
                 NumEntry.Text = "";
                 UnitEntry.Text = "";
             }
+            */
+
+            if (!(NameEntry.Text.Equals("")))
+            {
+                if (!s_switch)//食材の登録だったら
+                {
+                    FoodModel.InsertFood(1, NameEntry.Text, result, yyyymmdd);//試し
+                    DisplayAlert(NameEntry.Text + yyyymmdd.ToString("yyyy/MM/dd"), "あと" + result.ToString() + "日", "OK");
+
+                    NameEntry.Text = "";
+
+                    FoodPicker.Date = new DateTime(now.Year, now.Month, now.Day);//
+                }
+                else//保存食品の登録だったら
+                {
+                    qty = int.Parse(NumEntry.Text);
+                    StockFoodModel.InsertStock(1, NameEntry.Text, qty, UnitEntry.Text);
+                    DisplayAlert(NameEntry.Text, qty.ToString() + UnitEntry.Text, "OK");
+
+                    NameEntry.Text = "";
+                    NumEntry.Text = "";
+                    UnitEntry.Text = "";
+                }
+            }
+            else
+            {
+                DisplayAlert("入力エラー", "食品名を入力してください", "OK");
+            }
+
         }
 
         /***************「すべて削除ボタン」が押された時********************/
