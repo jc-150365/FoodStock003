@@ -72,9 +72,7 @@ namespace FoodStock01
         {
             if (!s_switch)//食材の登録だったら
             {
-
                 FoodModel.InsertFood(1, NameEntry.Text, result, yyyymmdd);//試し
-                //DisplayAlert(NameEntry.Text + yyyymmdd.ToString(), "あと" + result.ToString() + "日", "OK");
                 DisplayAlert(NameEntry.Text + yyyymmdd.ToString("yyyy/MM/dd"), "あと" + result.ToString() + "日", "OK");
 
                 NameEntry.Text = "";
