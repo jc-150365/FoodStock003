@@ -54,10 +54,6 @@ namespace FoodStock01
             }
             else
             {
-                /*
-                SettingModel.UpdateSetting(1,notice);
-                DisplayAlert("通知日数", notice.ToString(), "OK");
-                */
                 SettingModel.UpdateSetting(1,alert);
                 DisplayAlert("通知日数", alert.ToString(), "OK");
             }
