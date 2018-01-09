@@ -88,7 +88,7 @@ namespace FoodStock01
                     {
                         new StackLayout
                         {
-                            BackgroundColor = Color.HotPink,
+                            BackgroundColor = Color.Green,
                             Padding = 5,
                             Orientation = StackOrientation.Horizontal,
                             Children = {entry,buttonAdd}//Entryコントロールとボタンコントロールを配置
