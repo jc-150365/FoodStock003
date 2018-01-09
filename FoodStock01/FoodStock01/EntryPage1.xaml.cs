@@ -74,7 +74,8 @@ namespace FoodStock01
             {
 
                 FoodModel.InsertFood(1, NameEntry.Text, result, yyyymmdd);//試し
-                DisplayAlert(NameEntry.Text + yyyymmdd.ToString(), "あと" + result.ToString() + "日", "OK");
+                //DisplayAlert(NameEntry.Text + yyyymmdd.ToString(), "あと" + result.ToString() + "日", "OK");
+                DisplayAlert(NameEntry.Text + yyyymmdd.ToString("gyyyy/MM/dd"), "あと" + result.ToString() + "日", "OK");
 
                 NameEntry.Text = "";
 
