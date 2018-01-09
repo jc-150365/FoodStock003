@@ -12,48 +12,14 @@ namespace FoodStock01
 {
     class FoodPageViewModel
     {
-
         public ObservableCollection<Food> Foods
         {
             get;
             private set;
         }
 
-
         public FoodPageViewModel()
         {
-            /*************おかしくなったらここを解除*****************/
-            /*
-            if (FoodModel.SelectFood() != null)
-            {
-                
-                var query = FoodModel.SelectFood();
-                Foods = new ObservableCollection<Food>();
-                foreach (var food in query)
-                {
-                    Food f = new Food
-                    {
-                        F_no = food.F_no,
-                        F_name = food.F_name,
-                        F_result = food.F_result,
-                        F_date = food.F_date
-                    };
-                    Foods.Add(f);
-                }
-            }
-            else
-            {
-                Foods = new ObservableCollection<Food> {
-                    new Food {
-                       F_name = "NoData",
-                       //F_date = new DateTime(1970,1,1)
-                       F_result = 999
-                    }
-                };
-            }
-            */
-
-            /**********************ダメだったらここを消す********************/
             if (FoodModel.SelectFood() != null)
             {
                 var query01 = FoodModel.SelectFood();
@@ -99,8 +65,6 @@ namespace FoodStock01
                     }
                 };
             }
-            /****************************************************************/
-
         }
 
     }
