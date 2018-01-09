@@ -105,7 +105,6 @@ namespace FoodStock01
 
     }
 
-
     public class Food
     {
         public int F_no { get; set; }//追加

@@ -32,10 +32,10 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
 
                 <Label Text="食材名" 
@@ -68,10 +68,10 @@
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
                                 </Grid.ColumnDefinitions>
 
                                 <Label Text="{Binding F_name}" 
@@ -88,7 +88,8 @@
                                     <Label Text="{Binding F_result}" 
                                        Grid.Column="0" Grid.Row="0"
                                        HorizontalOptions="End"
-                                       FontSize="Large"/>
+                                       FontSize="Large"
+                                       TextColor="Red"/>
                                     <Label Text="日" 
                                        Grid.Column="1" Grid.Row="0"
                                        HorizontalOptions="Start"

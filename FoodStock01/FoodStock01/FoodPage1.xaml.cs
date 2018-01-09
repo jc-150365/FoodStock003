@@ -33,7 +33,7 @@ namespace FoodStock01
 
                 InitializeComponent();
 
-                DisplayAlert("試しのアラート", "とりあえず通知", "OK");
+                DisplayAlert("試しのアラート", "とりあえず通知", "OK");//試し
             }
         }
 
@@ -102,5 +102,7 @@ namespace FoodStock01
 
             InitializeComponent();
         }
+
+
     }
 }
