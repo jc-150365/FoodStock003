@@ -36,7 +36,7 @@ namespace FoodStock01
         /****************起動時にアラートが出る***********************/
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+            //base.OnAppearing();
             //設定した通知日数に合致する食材あればアラート↓
             if(FoodModel.SelectFood02() != null)
             {
