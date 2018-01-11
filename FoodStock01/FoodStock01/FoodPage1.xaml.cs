@@ -36,12 +36,14 @@ namespace FoodStock01
         /****************起動時にアラートが出る************************/
         protected override void OnAppearing()
         {
+            var query = FoodModel.SelectFood02();
+
             base.OnAppearing();
             //設定した通知日数に合致する食材あればアラート↓
-            //if(FoodModel.SelectFood02() != null)
-            //{
+              if(query != null)
+              {
                 DisplayAlert("消費期限通知", "期限が近づいている食材があります", "OK");
-            //}      
+               }      
         }
         /**************************************************************/
 
