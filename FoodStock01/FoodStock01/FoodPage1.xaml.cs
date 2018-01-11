@@ -40,7 +40,12 @@ namespace FoodStock01
             //設定した通知日数に合致する食材あればアラート↓
             if(FoodModel.SelectFood02() != null)
             {
+                base.OnAppearing();
                 DisplayAlert("消費期限通知", "期限が近づいている食材があります", "OK");
+            }
+            else
+            {
+                base.OnAppearing();
             }
         }
         /**************************************************************/
