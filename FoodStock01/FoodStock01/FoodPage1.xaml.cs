@@ -23,8 +23,6 @@ namespace FoodStock01
                 Title = title;
 
                 InitializeComponent();
-
-                //DisplayAlert("期限通知", "期限が近づいている食材があります", "OK");//試し
             }
             else
             {
@@ -32,18 +30,20 @@ namespace FoodStock01
                 Title = title;
 
                 InitializeComponent();
-
-                //DisplayAlert("試しのアラート", "とりあえず通知", "OK");//試し
             }
         }
 
-        //通知の試し（アラート）
+        /****************起動時にアラートが出る***********************/
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            DisplayAlert("試しのアラート", "とりあえず通知", "OK");//試し
-
+            //設定した通知日数に合致する食材あればアラート↓
+            if(FoodModel.SelectFood02() != null)
+            {
+                DisplayAlert("消費期限通知", "期限が近づいている食材があります", "OK");
+            }
         }
+        /**************************************************************/
 
         void ChackBoxChanged(object sender, bool isChecked)
         {

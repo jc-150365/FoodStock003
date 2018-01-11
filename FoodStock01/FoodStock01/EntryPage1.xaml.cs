@@ -141,9 +141,9 @@ namespace FoodStock01
         public static int Span(DateTime d)
         {
             TimeSpan t = d - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-
+            
             int span = t.Days;
-
+           
             return span;
         }
     }
