@@ -77,13 +77,12 @@
                 <TimePicker Format="H"
                             x:Name="TPicker"
                             IsEnabled="True"
-                            PropertyChanged="TPicker_PropertyChanged"/>
+                            PropertyChanged="TPicker_PropertyChanged" />
 
                 <Button Text="通知時間を保存" 
                         VerticalOptions="Center"
                         x:Name="Time_Button"
-                        Clicked="Time_Button_Clicked"/>
-
+                        Clicked="Time_Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

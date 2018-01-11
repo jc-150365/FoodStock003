@@ -70,5 +70,10 @@ namespace FoodStock01
         {
 
         }
+
+        private void Time_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
