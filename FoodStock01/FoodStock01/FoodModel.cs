@@ -145,7 +145,9 @@ namespace FoodStock01
                 try
                 {
                     /**********試し*************/
-                    List<SettingModel> SetList = SettingModel.SelectSetting();
+                    //List<SettingModel> SetList = SettingModel.SelectSetting();
+
+                    List<SettingModel> SetList = db.Query<SettingModel>("SELECT [Set_alert] FROM [Setting]");
 
                     int[] SetArray = new int[100];
 
