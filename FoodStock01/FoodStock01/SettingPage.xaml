@@ -74,7 +74,7 @@
                     Clicked="Select_Max_Clicked"/>
 
                 <Label Text="通知時間帯を選択してください"/>
-                <TimePicker Format="T"
+                <TimePicker Format="H"
                             x:Name="TPicker"
                             IsEnabled="True"
                             PropertyChanged="TPicker_PropertyChanged"/>
