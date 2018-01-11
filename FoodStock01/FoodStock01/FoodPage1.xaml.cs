@@ -24,7 +24,7 @@ namespace FoodStock01
 
                 InitializeComponent();
 
-                DisplayAlert("期限通知", "期限が近づいている食材があります", "OK");//試し
+                //DisplayAlert("期限通知", "期限が近づいている食材があります", "OK");//試し
             }
             else
             {
@@ -33,8 +33,16 @@ namespace FoodStock01
 
                 InitializeComponent();
 
-                DisplayAlert("試しのアラート", "とりあえず通知", "OK");//試し
+                //DisplayAlert("試しのアラート", "とりあえず通知", "OK");//試し
             }
+        }
+
+        //通知の試し（アラート）
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            DisplayAlert("試しのアラート", "とりあえず通知", "OK");//試し
+
         }
 
         void ChackBoxChanged(object sender, bool isChecked)
