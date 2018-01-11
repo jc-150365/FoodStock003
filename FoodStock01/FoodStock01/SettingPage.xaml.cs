@@ -65,5 +65,10 @@ namespace FoodStock01
 
             DisplayAlert("最新の通知日数", select_max.ToString(), "OK");
         }
+    
+        private void TPicker_PropertyChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
