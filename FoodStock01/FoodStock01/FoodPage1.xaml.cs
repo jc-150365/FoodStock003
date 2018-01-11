@@ -33,7 +33,7 @@ namespace FoodStock01
             }
         }
 
-        /****************起動時にアラートが出る***********************/
+        /****************起動時にアラートが出る************************/
         protected override void OnAppearing()
         {
             base.OnAppearing();
