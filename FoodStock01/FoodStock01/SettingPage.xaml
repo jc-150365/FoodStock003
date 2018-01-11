@@ -72,7 +72,18 @@
                     VerticalOptions="Center"
                     x:Name="Select_Max"
                     Clicked="Select_Max_Clicked"/>
-            
+
+                <Label Text="通知時間帯を選択してください"/>
+                <TimePicker Format="T"
+                            x:Name="TPicker"
+                            IsEnabled="True"
+                            PropertyChanged="TPicker_PropertyChanged"/>
+
+                <Button Text="通知時間を保存" 
+                        VerticalOptions="Center"
+                        x:Name="Time_Button"
+                        Clicked="Time_Button_Clicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
